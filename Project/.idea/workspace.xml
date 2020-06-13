@@ -2,25 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a103b1b-3182-46ac-bf58-7ecaac216b67" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Correlation_CO(GT).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RH_CO(GT).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/T_CO(GT).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/AirQuality_Cleared.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataFrameWithTestVariables_CO(GT).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dfKK_CO(GT).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hours_CO(GT).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hours_NMHC(GT).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hours_NO2(GT).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/linearRegression2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/month_CO(GT).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/month_NMHC(GT).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/month_NO2(GT).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myfig.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weekDay_CO(GT).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weekDay_NMHC(GT).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weekDay_NO2(GT).png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/linearRegression.py" beforeDir="false" afterPath="$PROJECT_DIR$/linearRegression.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linearRegression2.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataAnalysis.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +52,7 @@
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.linearRegression2">
+  <component name="RunManager" selected="Python.linearRegression">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -105,6 +89,50 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/clearData.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="dataAnalysis (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dataAnalysis.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="dataAnalysis" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:\programy\GitHub Desktop\dataAnalysis\Project\dataAnalysis.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -157,32 +185,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="linearRegression2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/linearRegression2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.linearRegression2" />
         <item itemvalue="Python.linearRegression" />
+        <item itemvalue="Python.dataAnalysis (1)" />
+        <item itemvalue="Python.dataAnalysis" />
         <item itemvalue="Python.clearData" />
         <item itemvalue="Python.initial" />
       </list>
@@ -202,7 +209,7 @@
       <workItem from="1591946626962" duration="869000" />
       <workItem from="1591980017597" duration="12695000" />
       <workItem from="1592038941448" duration="2135000" />
-      <workItem from="1592057604519" duration="5562000" />
+      <workItem from="1592057604519" duration="10437000" />
     </task>
     <servers />
   </component>
@@ -233,42 +240,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="739" y="274" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591793883216" />
-    <state width="1877" height="386" key="GridCell.Tab.0.bottom" timestamp="1592066913842">
+    <state width="1877" height="333" key="GridCell.Tab.0.bottom" timestamp="1592082295316">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="386" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592066913842" />
-    <state width="1877" height="386" key="GridCell.Tab.0.center" timestamp="1592066913842">
+    <state width="1877" height="333" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592082295316" />
+    <state width="1877" height="333" key="GridCell.Tab.0.center" timestamp="1592082295316">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="386" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592066913842" />
-    <state width="1877" height="386" key="GridCell.Tab.0.left" timestamp="1592066913842">
+    <state width="1877" height="333" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592082295316" />
+    <state width="1877" height="333" key="GridCell.Tab.0.left" timestamp="1592082295316">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="386" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592066913842" />
-    <state width="1877" height="386" key="GridCell.Tab.0.right" timestamp="1592066913842">
+    <state width="1877" height="333" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592082295316" />
+    <state width="1877" height="333" key="GridCell.Tab.0.right" timestamp="1592082295316">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="386" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592066913842" />
-    <state width="1877" height="386" key="GridCell.Tab.1.bottom" timestamp="1592066913764">
+    <state width="1877" height="333" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592082295316" />
+    <state width="1877" height="333" key="GridCell.Tab.1.bottom" timestamp="1592082295226">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="386" key="GridCell.Tab.1.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592066913764" />
-    <state width="1877" height="386" key="GridCell.Tab.1.center" timestamp="1592066913764">
+    <state width="1877" height="333" key="GridCell.Tab.1.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592082295226" />
+    <state width="1877" height="333" key="GridCell.Tab.1.center" timestamp="1592082295226">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="386" key="GridCell.Tab.1.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592066913764" />
-    <state width="1877" height="386" key="GridCell.Tab.1.left" timestamp="1592066913764">
+    <state width="1877" height="333" key="GridCell.Tab.1.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592082295226" />
+    <state width="1877" height="333" key="GridCell.Tab.1.left" timestamp="1592082295226">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="386" key="GridCell.Tab.1.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592066913764" />
-    <state width="1877" height="386" key="GridCell.Tab.1.right" timestamp="1592066913764">
+    <state width="1877" height="333" key="GridCell.Tab.1.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592082295226" />
+    <state width="1877" height="333" key="GridCell.Tab.1.right" timestamp="1592082295226">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="386" key="GridCell.Tab.1.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592066913764" />
+    <state width="1877" height="333" key="GridCell.Tab.1.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592082295226" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1591793746671">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591793746671" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1592081061824">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592081061824" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -282,9 +293,10 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Project$linearRegression2.coverage" NAME="linearRegression2 Coverage Results" MODIFIED="1592066913701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Project$dataAnalysis__1_.coverage" NAME="dataAnalysis (1) Coverage Results" MODIFIED="1592082145957" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Project$linearRegression2.coverage" NAME="linearRegression2 Coverage Results" MODIFIED="1592068053370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Project$clearData.coverage" NAME="clearData Coverage Results" MODIFIED="1591980102549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Project$initial.coverage" NAME="initial Coverage Results" MODIFIED="1591980078476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Project$linearRegression.coverage" NAME="linearRegression Coverage Results" MODIFIED="1592065898531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Project$linearRegression.coverage" NAME="linearRegression Coverage Results" MODIFIED="1592082295194" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

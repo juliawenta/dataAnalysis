@@ -1,11 +1,10 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
-import sklearn
 from sklearn import metrics
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+from dataAnalysis import airData
 
 #functions
 def correlationFunction(x, y, timeInHours=0):
@@ -37,34 +36,6 @@ def shiftDataFrame12(airData, target=None, timeInHours=0):
     #return new dataFrame
     return  pd.DataFrame(data=newSchift)
 
-#open file
-airData = pd.read_csv('data/AirQuality_Cleared.csv', sep=";")
-
-#Date and Time are objects as we check in clearData.py
-airData['dateAndTime'] = airData['Date']+' '+airData['Time']
-airData['dateAndTime'].head()
-#print(airData['dateAndTime'].head())
-# now we have date and time together
-airData['dateAndTime'] = pd.to_datetime(airData.dateAndTime, format='%d/%m/%Y %H.%M.%S')
-airData.dtypes
-
-#preparing data
-airData['month'] = airData['dateAndTime'].dt.month
-airData['weekday'] = airData['dateAndTime'].dt.weekday
-airData['weekdayName'] = airData['dateAndTime'].dt.day_name()
-airData['hours'] = airData['dateAndTime'].dt.hour
-
-airDataCorrel = airData.corr()
-hourlyAverageCO = airDataCorrel['CO(GT)'].to_frame().sort_values('CO(GT)')
-print(hourlyAverageCO)
-#plot for hourlyAverageCO
-plt.figure(figsize=(10,8))
-hourlyAverageCO.plot(kind='barh', color='cyan')
-plt.title('Correlation with the resulting variable: CO ', fontsize=20)
-plt.xlabel('Correlation level')
-plt.ylabel('Continuous independent variables')
-plt.savefig("Correlation_CO(GT).png")
-plt.show()
 
 x = airData.RH       # independent variable
 y = airData['CO(GT)']    # dependent variable
@@ -85,7 +56,6 @@ correlationFunction(x, y, timeInHours=checkShiftAH)
 print(correlationFunction(x, y, timeInHours=checkShiftAH))
 
 #We check a variable with very low correlation with the resulting CO (GT) variable.
-
 x = airData['T']      # independent variable
 checkShiftT = checkShift(x,y,N)
 print('Optimal shift for T: ',checkShiftT)
@@ -115,7 +85,6 @@ print("  airData5")
 airData5 = airData5.dropna(how ='any')
 airData5.head()
 print(airData5)
-
 
 airData5.plot(x='Shift_T', y='CO(GT)', style='o')
 plt.title('Shift_T vs CO')
