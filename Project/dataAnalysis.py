@@ -6,7 +6,7 @@ airData = pd.read_csv('data/AirQuality_Cleared.csv', sep=";")
 
 print("describe: ")
 airData.describe()
-print(airData.describe())
+#print(airData.describe())
 """describe: 
             CO(GT)  PT08.S1(CO)  ...           RH           AH
 count  9357.000000  9357.000000  ...  9357.000000  9357.000000
@@ -20,7 +20,7 @@ max      11.900000  2040.000000  ...    88.700000     2.231000
 """
 print("info: ")
 airData.info()
-print(airData.info())
+#print(airData.info())
 """info: 
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 9357 entries, 0 to 9356
@@ -56,7 +56,7 @@ col_=airData.columns.tolist()[2:]
 print("===========")
 #airData correlation:
 airDataCorrel = airData.corr()
-print(airDataCorrel)
+#print(airDataCorrel)
 """Correlation:
                  CO(GT)  PT08.S1(CO)  NMHC(GT)  ...         T        RH        AH
 CO(GT)         1.000000     0.886114  0.227667  ...  0.025639  0.020122  0.025227
@@ -90,7 +90,7 @@ airData['hours'] = airData['dateAndTime'].dt.hour
 
 
 airDataCorrelCO = airDataCorrel['CO(GT)'].to_frame().sort_values('CO(GT)')
-print(airDataCorrelCO)
+#print(airDataCorrelCO)
 #plot for hourlyAverageCO
 plt.figure(figsize=(10,8))
 airDataCorrelCO.plot(kind='barh', color='cyan')

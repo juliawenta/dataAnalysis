@@ -116,11 +116,25 @@ yNew = trainRegression.predict(X_test)
 yNew = np.round(yNew, decimals=2)
 
 #with test variables
-dataFrameWithTestVariables = pd.DataFrame({'CO(GT) Actual': y_test, 'CO(GT)_Predicted': yNew})
-dataFrameWithTestVariables.head(5)
+dataFrameWithTestVariables = pd.DataFrame({' Actual CO(GT)': y_test, 'Predicted CO(GT)': yNew})
+dataFrameWithTestVariables.head(10)
+print(dataFrameWithTestVariables.head(10))
+"""    Actual CO(GT)  Predicted CO(GT)
+0             0.5              1.63
+1             1.9              1.91
+2             3.4              2.40
+3             1.2              1.45
+4             2.4              2.40
+5             1.3              2.33
+6             1.9              1.64
+7             4.6              2.55
+8             1.3              1.64
+9             3.1              2.35
+
+"""
 
 dataFrameWithTestVariables.head(50).plot()
-#plt.savefig("dataFrameWithTestVariables_CO(GT).png")
+plt.savefig("dataFrameWithTestVariables_CO(GT).png")
 plt.show()
 print("R^2 score for liner regression: ", trainRegression.score(X_test, y_test))
 #info
@@ -154,4 +168,13 @@ airData.pivot_table(index='weekdayName', values='NO2(GT)', aggfunc='mean').plot(
 #plt.savefig("weekDay_NO2(GT).png")
 airData.pivot_table(index='hours', values='NO2(GT)', aggfunc='mean').plot(kind='bar', color='y')
 #plt.savefig("hours_NO2(GT).png")
+plt.show()
+
+# Plots for month, weekDay and hours level of C6H6
+airData.pivot_table(index='month', values='C6H6(GT)', aggfunc='mean').plot(kind='bar')
+#plt.savefig("month_C6H6(GT)).png") #Save plot as a image - will be included in report
+airData.pivot_table(index='weekdayName', values='C6H6(GT)', aggfunc='mean').plot(kind='bar', color='g')
+#plt.savefig("weekDay_C6H6(GT)).png")
+airData.pivot_table(index='hours', values='C6H6(GT)', aggfunc='mean').plot(kind='bar', color='y')
+#plt.savefig("hours_C6H6(GT)).png")
 plt.show()

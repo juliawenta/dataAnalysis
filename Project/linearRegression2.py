@@ -2,14 +2,12 @@
 #import linearRegression
 import pandas as pd
 import matplotlib.pyplot as plt
-
 import seaborn as snc
 from sklearn import metrics
-from sklearn.preprocessing import StandardScaler         #import normalisation package
-from sklearn.model_selection import train_test_split      #import train test split
-from sklearn.linear_model import LinearRegression         #import linear regression package
-from sklearn.metrics import mean_squared_error,mean_absolute_error   #import mean squared error and mean absolute error
-
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error,mean_absolute_error
 
 #linearRegression part2 => this time we tray anotherway
 
@@ -17,17 +15,12 @@ from sklearn.metrics import mean_squared_error,mean_absolute_error   #import mea
 airData = pd.read_csv('data/AirQuality_Cleared.csv', sep=";")
 print(airData.head())
 
-print(airData['CO(GT)'])
-
 #snc.pairplot(airData[["Date","Time","CO(GT)","PT08.S1(CO)","NMHC(GT)","C6H6(GT)","PT08.S2(NMHC)","NOx(GT)","PT08.S3(NOx)","NO2(GT)","PT08.S4(NO2)","PT08.S5(O3)"]],diag_kind = "auto")
 #plt.savefig("pairplot.png")
 #plt.show()
-#airData.plot(x='Date', y='CO(GT)')
-#chyba ten wykres był wcześniej zapisany
-#plt.show()
 
-CO = airData['CO(GT)']
 C6H6 = airData['C6H6(GT)'] #target
+
 #pearson
 print("===pearson===")
 airDataQuality=airData.corr('pearson')
@@ -95,8 +88,7 @@ print("===c6h6 values===")
 airData2Values = airData2.values
 C6H6 = C6H6.values
 
-#Dzielenie funkcji i celu na losowe podzbiory pociągu i testu za pomocą train_test_split ()
-X_train, X_test, y_train, y_test = train_test_split(airData2Values, C6H6, test_size=0.2)
+X_train, X_test, y_train, y_test = train_test_split(airData2Values, C6H6, test_size=0.3, random_state=0)
 linearRegression2 = LinearRegression(normalize=True)
 linearRegression2.fit(X_train, y_train)
 #Fitting the linear model.
@@ -110,6 +102,16 @@ print("R^2 score for liner regression: ", linearRegression2.score(X_test, y_test
 plt.scatter(y_test,yNew,color='black')
 plt.show()
 
+#with test variables
+dataFrameWithTestVariables = pd.DataFrame({' Actual C6H6(GT)': y_test, 'Predicted C6H6(GT)': yNew})
+dataFrameWithTestVariables.head(10)
+print(dataFrameWithTestVariables.head(10))
+dataFrameWithTestVariables.head(50).plot()
+
+plt.savefig("dataFrameWithTestVariables_C6H6(GT).png")
+plt.show()
+
 print('Mean Squared Error:     ', metrics.mean_squared_error(y_test, yNew))
 print('Mean Absolute Error:    ', metrics.mean_absolute_error(y_test, yNew))
 print('Median Absolute Error:  ', metrics.median_absolute_error(y_test, yNew))
+
