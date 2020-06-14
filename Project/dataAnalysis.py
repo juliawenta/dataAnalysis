@@ -46,14 +46,14 @@ dtypes: float64(13), object(2)
 memory usage: 1.1+ MB
 """
 #plots
-print("===========")
+print(" ")
 col_=airData.columns.tolist()[2:]
-#for i in airData.columns.tolist()[2:]:
-    #airData.plot(x='Date', y=i)
-    #plt.savefig("mainInfo"+str(i)+".png")
-   # plt.show()
+for i in airData.columns.tolist()[2:]:
+    airData.plot(x='Date', y=i)
+    plt.savefig("charts/mainInfo"+str(i)+".png")
+    plt.show()
 
-print("===========")
+print(" ")
 #airData correlation:
 airDataCorrel = airData.corr()
 #print(airDataCorrel)
@@ -96,5 +96,5 @@ plt.figure(figsize=(10,8))
 airDataCorrelCO.plot(kind='barh', color='cyan')
 plt.title('Correlation with the resulting variable: CO ', fontsize=18)
 plt.xlabel('Correlation level')
-#plt.savefig("Correlation_CO(GT).png")
+plt.savefig("charts/Correlation_CO(GT).png")
 plt.show()

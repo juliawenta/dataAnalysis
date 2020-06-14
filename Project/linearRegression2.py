@@ -1,23 +1,19 @@
-#import dataAnalysis
-#import linearRegression
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as snc
 from sklearn import metrics
-from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error,mean_absolute_error
 
-#linearRegression part2 => this time we tray anotherway
 
 #open file
 airData = pd.read_csv('data/AirQuality_Cleared.csv', sep=";")
 print(airData.head())
 
-#snc.pairplot(airData[["Date","Time","CO(GT)","PT08.S1(CO)","NMHC(GT)","C6H6(GT)","PT08.S2(NMHC)","NOx(GT)","PT08.S3(NOx)","NO2(GT)","PT08.S4(NO2)","PT08.S5(O3)"]],diag_kind = "auto")
-#plt.savefig("pairplot.png")
-#plt.show()
+snc.pairplot(airData[["Date","Time","CO(GT)","PT08.S1(CO)","NMHC(GT)","C6H6(GT)","PT08.S2(NMHC)","NOx(GT)","PT08.S3(NOx)","NO2(GT)","PT08.S4(NO2)","PT08.S5(O3)"]],diag_kind = "auto")
+plt.savefig("charts/pairplot.png")
+plt.show()
 
 C6H6 = airData['C6H6(GT)'] #target
 
@@ -42,10 +38,9 @@ RH             0.020122     0.120042 -0.057676  ... -0.570775  1.000000  0.18051
 AH             0.025227     0.121724  0.060621  ...  0.654768  0.180512  1.000000
 """
 
-print("===abs===")
 abs(airDataQuality['C6H6(GT)']).sort_values(ascending=False)
 print(abs(airDataQuality['C6H6(GT)']).sort_values(ascending=False))
-"""ew. na tego printa
+"""
 C6H6(GT)         1.000000
 PT08.S2(NMHC)    0.982485
 CO(GT)           0.932584
@@ -64,51 +59,51 @@ Name: C6H6(GT), dtype: float64
 """
 
 airData['C6H6(GT)'].value_counts().plot(kind='bar', color='lightblue', figsize=(50,10))
-#plt.savefig("C6H6(GT).png")
+plt.savefig("charts/C6H6(GT).png")
 plt.show()
 
 airData2 = airData
-print("===head airData2===")
+#print("===head airData2===")
 airData2=airData2.drop('Date',axis=1)
 airData2=airData2.drop('Time',axis=1)
 airData2=airData2.drop('T',axis=1)
 airData2=airData2.drop('RH',axis=1)
 airData2=airData2.drop('AH',axis=1)
 airData2=airData2.drop('NMHC(GT)',axis=1)
+airData2=airData2.drop('C6H6(GT)',axis=1)
 airData2.head()
 print(airData2.head())
-"""   CO(GT)  PT08.S1(CO)  C6H6(GT)  ...  NO2(GT)  PT08.S4(NO2)  PT08.S5(O3)
-0     2.6       1360.0      11.9  ...    113.0        1692.0       1268.0
-1     2.0       1292.0       9.4  ...     92.0        1559.0        972.0
-2     2.2       1402.0       9.0  ...    114.0        1555.0       1074.0
-3     2.2       1376.0       9.2  ...    122.0        1584.0       1203.0
-4     1.6       1272.0       6.5  ...    116.0        1490.0       1110.0
+"""      CO(GT)  PT08.S1(CO)  PT08.S2(NMHC)  ...  NO2(GT)  PT08.S4(NO2)  PT08.S5(O3)
+0     2.6       1360.0         1046.0  ...    113.0        1692.0       1268.0
+1     2.0       1292.0          955.0  ...     92.0        1559.0        972.0
+2     2.2       1402.0          939.0  ...    114.0        1555.0       1074.0
+3     2.2       1376.0          948.0  ...    122.0        1584.0       1203.0
+4     1.6       1272.0          836.0  ...    116.0        1490.0       1110.0
 """
-print("===c6h6 values===")
+#print("===c6h6 values===")
 airData2Values = airData2.values
 C6H6 = C6H6.values
 
 X_train, X_test, y_train, y_test = train_test_split(airData2Values, C6H6, test_size=0.3, random_state=0)
 linearRegression2 = LinearRegression(normalize=True)
 linearRegression2.fit(X_train, y_train)
-#Fitting the linear model.
+
 print("Predicted values:", linearRegression2.predict(X_test))
 yNew = linearRegression2.predict(X_test)
 yNew.shape
 
-"""to co z printa: Predicted values: [ 3.8  7.2  2.1 ...  6.   8.7 24.8]"""
+"""Predicted values: [ 3.8  7.2  2.1 ...  6.   8.7 24.8]"""
 
-print("R^2 score for liner regression: ", linearRegression2.score(X_test, y_test))
+print("R^2 score: ", linearRegression2.score(X_test, y_test))
 plt.scatter(y_test,yNew,color='black')
 plt.show()
 
-#with test variables
 dataFrameWithTestVariables = pd.DataFrame({' Actual C6H6(GT)': y_test, 'Predicted C6H6(GT)': yNew})
 dataFrameWithTestVariables.head(10)
 print(dataFrameWithTestVariables.head(10))
 dataFrameWithTestVariables.head(50).plot()
 
-plt.savefig("dataFrameWithTestVariables_C6H6(GT).png")
+plt.savefig("charts/dataFrameWithTestVariables_C6H6(GT).png")
 plt.show()
 
 print('Mean Squared Error:     ', metrics.mean_squared_error(y_test, yNew))
