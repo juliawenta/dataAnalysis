@@ -90,14 +90,14 @@ airData5.plot(x='Shift_T', y='CO(GT)', style='o')
 plt.title('Shift_T vs CO')
 plt.xlabel('Shift_T')
 plt.ylabel('CO')
-plt.savefig("T_CO(GT).png")
+#plt.savefig("T_CO(GT).png")
 plt.show()
 
 airData5.plot(x='Shift_RH', y='CO(GT)', style='o')
 plt.title('Shift_RH vs CO')
 plt.xlabel('Shift_RH')
 plt.ylabel('CO')
-plt.savefig("RH_CO(GT).png")
+#plt.savefig("RH_CO(GT).png")
 plt.show()
 
 #model building
@@ -111,7 +111,7 @@ trainRegression = LinearRegression()
 trainRegression.fit(X_train, y_train)
 
 LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None, normalize=False)
-
+print("Predicted values:", trainRegression.predict(X_test))
 yNew = trainRegression.predict(X_test)
 yNew = np.round(yNew, decimals=2)
 
@@ -120,9 +120,9 @@ dataFrameWithTestVariables = pd.DataFrame({'CO(GT) Actual': y_test, 'CO(GT)_Pred
 dataFrameWithTestVariables.head(5)
 
 dataFrameWithTestVariables.head(50).plot()
-plt.savefig("dataFrameWithTestVariables_CO(GT).png")
+#plt.savefig("dataFrameWithTestVariables_CO(GT).png")
 plt.show()
-
+print("R^2 score for liner regression: ", trainRegression.score(X_test, y_test))
 #info
 print('Mean Squared Error:     ', metrics.mean_squared_error(y_test, yNew))
 print('Mean Absolute Error:    ', metrics.mean_absolute_error(y_test, yNew))
@@ -131,27 +131,27 @@ print('Median Absolute Error:  ', metrics.median_absolute_error(y_test, yNew))
 
 # Plots for month, weekDay and hours level of CO
 airData.pivot_table(index='month', values='CO(GT)', aggfunc='mean').plot(kind='bar')
-plt.savefig("month_CO(GT).png") #Save plot as a image - will be included in report
+#plt.savefig("month_CO(GT).png") #Save plot as a image - will be included in report
 airData.pivot_table(index='weekdayName', values='CO(GT)', aggfunc='mean').plot(kind='bar', color='g')
-plt.savefig("weekDay_CO(GT).png")
+#plt.savefig("weekDay_CO(GT).png")
 airData.pivot_table(index='hours', values='CO(GT)', aggfunc='mean').plot(kind='bar', color='y')
-plt.savefig("hours_CO(GT).png")
+#plt.savefig("hours_CO(GT).png")
 plt.show()
 
 # Plots for month, weekDay and hours level of NMHC
 airData.pivot_table(index='month', values='NMHC(GT)', aggfunc='mean').plot(kind='bar')
-plt.savefig("month_NMHC(GT).png") #Save plot as a image - will be included in report
+#plt.savefig("month_NMHC(GT).png") #Save plot as a image - will be included in report
 airData.pivot_table(index='weekdayName', values='NMHC(GT)', aggfunc='mean').plot(kind='bar', color='g')
-plt.savefig("weekDay_NMHC(GT).png")
+#plt.savefig("weekDay_NMHC(GT).png")
 airData.pivot_table(index='hours', values='NMHC(GT)', aggfunc='mean').plot(kind='bar', color='y')
-plt.savefig("hours_NMHC(GT).png")
+#plt.savefig("hours_NMHC(GT).png")
 plt.show()
 
 # Plots for month, weekDay and hours level of NO2
 airData.pivot_table(index='month', values='NO2(GT)', aggfunc='mean').plot(kind='bar')
-plt.savefig("month_NO2(GT).png") #Save plot as a image - will be included in report
+#plt.savefig("month_NO2(GT).png") #Save plot as a image - will be included in report
 airData.pivot_table(index='weekdayName', values='NO2(GT)', aggfunc='mean').plot(kind='bar', color='g')
-plt.savefig("weekDay_NO2(GT).png")
+#plt.savefig("weekDay_NO2(GT).png")
 airData.pivot_table(index='hours', values='NO2(GT)', aggfunc='mean').plot(kind='bar', color='y')
-plt.savefig("hours_NO2(GT).png")
+#plt.savefig("hours_NO2(GT).png")
 plt.show()

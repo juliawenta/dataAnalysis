@@ -48,10 +48,10 @@ memory usage: 1.1+ MB
 #plots
 print("===========")
 col_=airData.columns.tolist()[2:]
-for i in airData.columns.tolist()[2:]:
-    airData.plot(x='Date', y=i)
-    # plt.savefig("mainInfo"+str(i)+".png")
-    plt.show()
+#for i in airData.columns.tolist()[2:]:
+    #airData.plot(x='Date', y=i)
+    #plt.savefig("mainInfo"+str(i)+".png")
+   # plt.show()
 
 print("===========")
 #airData correlation:
@@ -73,6 +73,7 @@ T              0.025639     0.037046  0.082679  ...  1.000000 -0.570775  0.65476
 RH             0.020122     0.120042 -0.057676  ... -0.570775  1.000000  0.180512
 AH             0.025227     0.121724  0.060621  ...  0.654768  0.180512  1.000000"""
 
+
 #Date and Time are objects as we check in clearData.py
 airData['dateAndTime'] = airData['Date']+' '+airData['Time']
 airData['dateAndTime'].head()
@@ -88,13 +89,12 @@ airData['weekdayName'] = airData['dateAndTime'].dt.day_name()
 airData['hours'] = airData['dateAndTime'].dt.hour
 
 
-hourlyAverageCO = airDataCorrel['CO(GT)'].to_frame().sort_values('CO(GT)')
-print(hourlyAverageCO)
+airDataCorrelCO = airDataCorrel['CO(GT)'].to_frame().sort_values('CO(GT)')
+print(airDataCorrelCO)
 #plot for hourlyAverageCO
 plt.figure(figsize=(10,8))
-hourlyAverageCO.plot(kind='barh', color='cyan')
-plt.title('Correlation with the resulting variable: CO ', fontsize=20)
+airDataCorrelCO.plot(kind='barh', color='cyan')
+plt.title('Correlation with the resulting variable: CO ', fontsize=18)
 plt.xlabel('Correlation level')
-plt.ylabel('Continuous independent variables')
 #plt.savefig("Correlation_CO(GT).png")
 plt.show()
